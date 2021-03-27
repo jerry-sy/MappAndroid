@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+            name="viewmodel"
+            type="com.jerry.mappandroid.ui.MainViewModel" />
 
     </data>
 
@@ -12,9 +16,21 @@
         tools:context=".ui.MainActivity">
 
         <RelativeLayout
-            android:id="@+id/test_view"
+            android:id="@+id/main_map_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_current_location"
+            android:background="@color/transparent"
+            android:onClick="@{() -> viewmodel.onClickCurrentLocation()}"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
