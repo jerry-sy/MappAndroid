@@ -6,14 +6,14 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.jerry.mappandroid.ui.MainViewModel" />
+            type="com.jerry.mappandroid.ui.mainMap.MainViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.MainActivity">
+        tools:context=".ui.mainMap.MainActivity">
 
         <RelativeLayout
             android:id="@+id/main_map_view"

@@ -3,6 +3,7 @@
     package="com.jerry.mappandroid">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
@@ -12,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MappAndroid"
+        android:name=".MappApplication"
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
         >
@@ -19,7 +21,7 @@
         <!-- app key for kakao map api-->
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="a5ab221a6a2255e002db73335c49fb27"/>
 
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.mainMap.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
