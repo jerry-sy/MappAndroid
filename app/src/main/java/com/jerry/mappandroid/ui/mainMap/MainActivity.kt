@@ -19,11 +19,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (applicationContext as MappApplication).appComponent.locationComponent().create(this).inject(this)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         mapView = MapView(this)
+        binding.viewmodel = mainViewModel
+        binding.lifecycleOwner = this
         binding.mainMapView.addView(mapView)
 
-        (applicationContext as MappApplication).appComponent.locationComponent().create(this).inject(this)
 
         mainViewModel.currentMapPoint.observe(this, { mapPoint ->
             mapView.setMapCenterPoint(mapPoint, true)
